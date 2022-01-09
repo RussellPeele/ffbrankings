@@ -9,20 +9,21 @@ library(shiny)
 library(shinythemes)
 library(ggplot2)
 library(dplyr)
+library(tidyr)
 
 
 
 shinythemes::themeSelector()
 navbarPage(
     theme = shinytheme("united"),
-    "Fantasy Football Ranking Analysis",
+    "Fantasy Football Projection Analysis",
     # First bar: Player Search
     tabPanel("Player Search",
              sidebarPanel(
                  sliderInput("yr_range_bar1", h3("Year Range:"),
                              min = 2014, max = 2020, value = c(2014,2020)),
              
-                 textInput("player_name_bar1", h3("Player's Name"), "Aaron Rodgers"),
+                 selectizeInput("player_name_bar1", h3("Player"), choices=NULL, multiple=TRUE),
                  actionButton("action_bar1", "Update")
                  #submitButton("Update")
              ), #sidebar panel
@@ -50,6 +51,57 @@ navbarPage(
     
     ), 
  #navbar1 tab panel
+ 
+ tabPanel
+ ("Analysis - Projected Points vs Actual Points",
+     
+     sidebarPanel(
+         sliderInput("yr_range_bar3", h3("Year Range:"),
+                     min = 2014, max = 2020, value = c(2014,2020)),
+         
+         numericInput("echelon_bar2", "Players Projected to score over ______ Fantasy Points:", 200),
+         actionButton("action_bar3", "Update")
+         #submitButton("Update")
+     ), #sidebar panel
+     mainPanel(
+         textOutput("Message_bar3"),
+         tableOutput("point.table")
+     )# mainpanel   
+     
+ ), 
+ 
+ tabPanel
+ ("Analysis - Projected PPG vs Actual PPG",
+     
+     sidebarPanel(
+         sliderInput("yr_range_bar4", h3("Year Range:"),
+                     min = 2014, max = 2020, value = c(2014,2020)),
+         
+         numericInput("echelon_bar3", "Players Projected to score over ______ Fantasy Points Per Game", 10),
+         actionButton("action_bar4", "Update")
+         #submitButton("Update")
+     ), #sidebar panel
+     mainPanel(
+         textOutput("Message_bar4"),
+         tableOutput("ppg.table")
+     )# mainpanel   
+     
+ ), 
     
-        tabPanel("Analysis", "Analyze Predictability With Regression")
-)
+    tabPanel("Regression Analysis", "Regression Analysis",
+        selectizeInput("variable_bar1", h3("Position"), choices=NULL, multiple=TRUE),
+        selectizeInput("variable_bar2", h3("Predictor"), choices=NULL, multiple=TRUE),
+        actionButton("action_bar5", "Update")
+    ),
+    mainPanel(
+        textOutput("Message_bar5"),
+        verbatimTextOutput("Rsummary")
+    )
+        
+        
+    )
+ 
+ 
+ 
+
+
