@@ -32,3 +32,6 @@ Tab 5 - Regression analysis between predictor(s) and consistency. Input position
 
 Tab 5 caveat - Predicting Running back performance with a largely unrelated variable such as "tackles" or "sacks" will yield the expected result ~ zero correlation. More interesting tests would be to evaluate tds vs rushing yards vs receiving yards, etc... That way we can dig into questions like: which is more reliable, a goal line running back or a high volume back on the rest of the field. 
 
+Regarding Data Sets:
+
+I built my own data sets with historical data I retrieved from fantasydata.com. I do not think I need to credit anyone since, to my knowledge no one has built data frames like these before. The process is shown in my linear_predictions file. 
