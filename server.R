@@ -3,8 +3,8 @@
 
 source("global.R")
 
-load(file='Superflex_data_frame.Rda')
-load(file='Superflexcomplete_data_frame.Rda')
+load(file='superflex_data_frame.Rda')
+load(file='superflexcomplete_data_frame.Rda')
 
 
 server = function(input, output, session) {
