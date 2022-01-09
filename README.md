@@ -9,6 +9,15 @@ Abstract:
 
 The purpose of this app is exploratory data analysis - looking into the predictability of specific aspects of fantasy football. Some aspects are more reliable while some are more driven by luck. Since each manager (ie human player) has limited capital to spend on players, an efficient manager should put the most capital towards reliable returns while being frugal and riskier with the areas of the game that ultimately are a product of random chance. Example: “Touchdowns are flukey” is a common claim. The implication here is that a player who relies heavily on TD for fantasy points does not reliably hit his projection. Are claims like this true? Are specific players more reliable? Can a highly ranked running back be counted on to hit their projection? Does consistency rise or fall with the player’s tier? Are certain positions more consistent than others? This app can be used to begin to shed light on all these questions and combinations thereof, and in doing so tell us which metrics would be most useful to research further. 
 
+
+How to Launch: 
+
+runGitHub("ffbrankings", "RussellPeele", ref="main") 
+
+https://russellpeele.shinyapps.io/FantasyFootballProjectionAnalysis/
+
+
+
 How to use the app:
 
 Tab 1 - Visualization of player consistency. Input the player’s name and year range to see how the player has performed over that range relative to expectation. 
