@@ -30,5 +30,5 @@ Tab 4 - Points per game differential. Input year range and tier to see which pos
 
 Tab 5 - Regression analysis between predictor(s) and consistency. Input position and predictive variable (touchdowns, rushing yards, receptions…) to see a linear analysis of the relationship between specific predictor and actual performance for the chosen position. 
 
-Tab 5 caveat - Predicting Running back performance with a largely unrelated variable such as "tackles" or "sacks" will yield the expected result ~ zero correlation. More interesting tests would be to evaluate tds vs rushing yards vs receiving yards, etc... That way we can dig into the question: which is more reliable, a goal line running back or a high volume back on the rest of the field. 
+Tab 5 caveat - Predicting Running back performance with a largely unrelated variable such as "tackles" or "sacks" will yield the expected result ~ zero correlation. More interesting tests would be to evaluate tds vs rushing yards vs receiving yards, etc... That way we can dig into questions like: which is more reliable, a goal line running back or a high volume back on the rest of the field. 
 
