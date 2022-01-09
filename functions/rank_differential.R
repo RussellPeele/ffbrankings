@@ -3,13 +3,14 @@
 library(ggplot2)
 library(dplyr)
 
-load(file='Superflex_data_frame.Rda')
+load(file='superflex_data_frame.Rda')
 
 
 
 #takes in position and grouping - top 100, top 50, top 20
 rank_differential=function(year_start, year_end, top.echelon)
 {
+  load(file='superflex_data_frame.Rda')
   
   #Builds Rank differential column 
   
@@ -67,7 +68,8 @@ rank_differential=function(year_start, year_end, top.echelon)
 
 point_differential = function(year_start, year_end, top.echelon)
 {
- 
+  load(file='superflex_data_frame.Rda')
+  
   
   top200 = filter(Superflex.data, FantasyPoints >= top.echelon & actual == "no" | actual =="yes"  )|>
     filter(year >= year_start) %>%
@@ -125,6 +127,7 @@ point_differential = function(year_start, year_end, top.echelon)
 
 ppg_differential = function(year_start, year_end, top.echelon)
 {
+  load(file='superflex_data_frame.Rda')
   #Builds Rank differential column 
   
   top200 = filter(Superflex.data, FantasyPointsPerGame >= top.echelon & actual == "no"  | actual =="yes"  )|>

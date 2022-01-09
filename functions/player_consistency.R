@@ -3,13 +3,13 @@
 library(ggplot2)
 library(dplyr)
 
-load(file='Superflex_data_frame.Rda')
+load(file='superflex_data_frame.Rda')
 
 
 player_consistency=function(year_start, year_end, player_name)
   {
 
-  
+  load(file='superflex_data_frame.Rda')
  
   player.projected = filter(Superflex.data, Name==player_name, actual=="no") %>%
     filter(year >= year_start) %>%
